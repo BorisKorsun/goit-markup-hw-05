@@ -15,10 +15,10 @@ html {
   --third-text-color: #ffffff;
   --primary-title-color: #212121;
   --cecondary-title-color: #ffffff;
-  --accent-color: #2196f3;
   --brand-color: #2196f3;
   --footer-text: rgba(255, 255, 255, 0.6);
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-color: #2196f3;
 }
 
 body {
@@ -335,7 +335,7 @@ body {
   transition: transform 250ms var(--cubic);
 }
 
-.gallery-list > .item:nth-child(1):hover .gallery-overlay {
+.gallery-list > .item:hover .gallery-overlay {
   transform: translateY(0px);
 }
 
