@@ -20,12 +20,14 @@ body {
   --second-title-color: #212121;
   --primary-text-color: #212121;
   --second-text-color: #757575;
+  --third-text-color: #fff;
   --footer-text-color: rgba(255, 255, 255, 0.6);
-  --accent-color: #2196f3;
   --brand-color: #2196f3;
   --primary-background-color: #ffffff;
   --secondary-background-color: #f5f4fa;
   --third-background-color: #2f303a;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-color: #2196f3;
 }
 
 .link {
@@ -59,7 +61,7 @@ body {
 
   font-weight: bold;
   font-size: 36px;
-  line-height: 42px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
 }
@@ -82,6 +84,22 @@ body {
   margin-right: 50px;
 }
 
+.nav-list > li:nth-child(1) {
+  position: relative;
+}
+
+.nav-list > li:nth-child(1) > a::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
 .contacts {
   display: flex;
   padding-left: 0;
@@ -102,6 +120,8 @@ body {
 .contacts-icon.mail {
   margin-right: 10px;
   fill: #757575;
+
+  transition: fill 250ms var(--cubic);
 }
 
 .contacts .link:hover .contacts-icon.mail,
@@ -112,6 +132,8 @@ body {
 .contacts-icon.smartphone {
   margin-right: 10px;
   fill: #757575;
+
+  transition: fill 250ms var(--cubic);
 }
 
 .contacts .link:hover .contacts-icon.smartphone,
@@ -146,6 +168,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+
+  transition: color 250ms var(--cubic);
 }
 
 .nav-link:hover,
@@ -159,6 +183,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
+
+  transition: color 250ms var(--cubic);
 }
 
 .header-mail:hover,
@@ -172,6 +198,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
+
+  transition: color 250ms var(--cubic);
 }
 
 .header-tel:hover,
@@ -232,6 +260,8 @@ body {
   letter-spacing: 0.06em;
   color: #ffffff;
   background: var(--brand-color);
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .hero-btn:hover,
@@ -334,6 +364,45 @@ body {
   margin-right: 30px;
 }
 
+.about-img {
+  display: block;
+}
+
+.about-thumb {
+  position: relative;
+}
+
+.about-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.8),
+    rgba(47, 48, 58, 0.8)
+  );
+}
+
+.about-text {
+  margin: 0;
+  padding-left: 83px;
+  padding-right: 82px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  color: var(--third-text-color);
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 /* ---------------team--------------- */
 
 .team {
@@ -410,6 +479,8 @@ body {
   height: 44px;
   width: 44px;
   border-radius: 50%;
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .team-links .link:hover,
@@ -421,6 +492,8 @@ body {
   height: 100%;
   width: 100%;
   fill: #afb1b8;
+
+  transition: fill 250ms var(--cubic);
 }
 
 .team-links .link:hover .team-icon,
@@ -469,14 +542,16 @@ body {
   border-radius: 4px;
 }
 
+.clients-icon {
+  fill: #afb1b8;
+
+  transition: fill 250ms var(--cubic);
+}
+
 .clients-list .link:hover .clients-icon,
 .clients-list .link:focus .clients-icon {
   fill: var(--accent-color);
   border-color: var(--accent-color);
-}
-
-.clients-icon {
-  fill: #afb1b8;
 }
 
 /* ---------------footer--------------- */
@@ -526,6 +601,8 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #ffffff;
+
+  transition: color 250ms var(--cubic);
 }
 
 .footer-link-place:hover,
@@ -540,6 +617,8 @@ body {
   letter-spacing: 0.03em;
 
   color: var(--footer-text-color);
+
+  transition: color 250ms var(--cubic);
 }
 
 .footer-link:hover,
@@ -584,6 +663,8 @@ body {
   border-radius: 50%;
 
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .footer-links-list .link:hover,

@@ -18,6 +18,7 @@ html {
   --accent-color: #2196f3;
   --brand-color: #2196f3;
   --footer-text: rgba(255, 255, 255, 0.6);
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -89,6 +90,22 @@ body {
   padding-bottom: 32px;
 }
 
+.nav-list > li:nth-child(2) {
+  position: relative;
+}
+
+.nav-list > li:nth-child(2) > .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
 /* connection */
 .connection {
   display: flex;
@@ -133,6 +150,8 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--cubic);
 }
 
 .nav-link:hover,
@@ -150,6 +169,8 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--cubic);
 }
 
 .header-mail:hover,
@@ -166,6 +187,8 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--cubic);
 }
 
 .header-tel:hover,
@@ -176,6 +199,8 @@ body {
 .connection-icon {
   fill: #757575;
   margin-right: 10px;
+
+  transition: fill 250ms var(--cubic);
 }
 
 .header-mail:hover .connection-icon,
@@ -228,6 +253,8 @@ body {
 .gallery-list > .item {
   width: 370px;
   border: 1px solid #eeeeee;
+
+  transition: box-shadow 250ms var(--cubic);
 }
 
 .gallery-list > .item:hover {
@@ -259,6 +286,8 @@ body {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .filter-btn:hover,
@@ -275,6 +304,15 @@ body {
   padding-bottom: 6px;
 }
 
+.gallery-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-img {
+  display: block;
+}
+
 .gallery-title {
   margin-top: 0;
   margin-bottom: 4px;
@@ -285,6 +323,35 @@ body {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+}
+
+.gallery-overlay {
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(300px);
+
+  transition: transform 250ms var(--cubic);
+}
+
+.gallery-list > .item:nth-child(1):hover .gallery-overlay {
+  transform: translateY(0px);
+}
+
+.gallery-description {
+  margin: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+
+  color: var(--third-text-color);
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
 }
 
 .gallery-text {
@@ -355,6 +422,8 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #ffffff;
+
+  transition: color 250ms var(--cubic);
 }
 .footer-link-place:hover,
 .footer-link-place:focus {
@@ -368,6 +437,8 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
+  transition: color 250ms var(--cubic);
 }
 
 .footer-link:hover,
@@ -419,6 +490,8 @@ body {
   border-radius: 50%;
 
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .footer-links-list .link:hover,
